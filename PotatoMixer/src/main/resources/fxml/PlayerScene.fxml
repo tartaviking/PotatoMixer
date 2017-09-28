@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="AnchorPane" prefHeight="304.0" prefWidth="562.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="com.ivandrew.potatomixer.PlayerSceneFXMLController" />
+<AnchorPane id="ap" fx:id="ap" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ivandrew.potatomixer.PlayerSceneFXMLController">
+    <children>
+        <SplitPane id="sp" fx:id="sp" dividerPositions="0.65" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <Pane id="leftPane" fx:id="leftPane" prefHeight="200.0" prefWidth="200.0">
+                    <children>
+                        <Button id="PlayBTN" fx:id="handlePlayPauseBTN" layoutX="100.0" layoutY="215.0" mnemonicParsing="false" onAction="#handlePlayPauseBTN" text="Play/Pause" />
+                        <Button id="stopBTN" fx:id="stopBTN" layoutX="190.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleStopBTN" text="Stop" />
+                        <ToggleButton id="loopBTN" fx:id="loopBTN" layoutX="263.0" layoutY="215.0" mnemonicParsing="false" text="ToggleButton" />
+                        <Label id="testLabel" fx:id="testLabel" layoutX="99.0" layoutY="166.0" prefHeight="34.0" prefWidth="73.0" text="Label" />
+                  <Slider id="volumeSlider" fx:id="volumeSlider" blockIncrement="1.0" layoutX="451.0" layoutY="113.0" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" value="100.0" />
+                  <Slider fx:id="progressSlider" layoutX="99.0" layoutY="271.0" prefHeight="14.0" prefWidth="393.0" />
+                    </children>
+                </Pane>
+                <Pane id="rightPane" fx:id="rightPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: EC0704;" />
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>
