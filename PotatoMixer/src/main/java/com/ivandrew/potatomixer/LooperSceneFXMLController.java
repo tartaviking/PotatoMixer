@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -13,6 +14,10 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
@@ -96,6 +101,15 @@ public class LooperSceneFXMLController implements Initializable {
             mp.setOnEndOfMedia(() -> {
                 loopBtn.setStyle("-fx-background-color: #AEB6BF;");
                 mp.stop();
+            });
+            
+            final KeyCombination keyComb1 = new KeyCodeCombination(KeyCode.R,
+                    KeyCombination.CONTROL_DOWN);
+            loopAP.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
+                if (keyComb1.match(event)) {
+                    loopBtn.setStyle("-fx-background-color: #F1C40F;");
+                    mp.play();
+                }
             });
         }
     }
