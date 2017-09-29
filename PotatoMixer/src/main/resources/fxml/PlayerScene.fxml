@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.media.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -12,21 +15,55 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="ap" fx:id="ap" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ivandrew.potatomixer.PlayerSceneFXMLController">
+<AnchorPane id="ap" fx:id="ap" prefHeight="720.0" prefWidth="1055.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ivandrew.potatomixer.PlayerSceneFXMLController">
     <children>
-        <SplitPane id="sp" fx:id="sp" dividerPositions="0.65" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <SplitPane id="sp" fx:id="sp" dividerPositions="0.4805318138651472" prefHeight="720.0" prefWidth="1055.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <items>
-                <Pane id="leftPane" fx:id="leftPane" prefHeight="200.0" prefWidth="200.0">
+                <Pane id="leftPane" fx:id="leftPane" prefHeight="718.0" prefWidth="434.0" style="-fx-background-color: #CCCCCC;">
                     <children>
-                        <Button id="PlayBTN" fx:id="handlePlayPauseBTN" layoutX="100.0" layoutY="215.0" mnemonicParsing="false" onAction="#handlePlayPauseBTN" text="Play/Pause" />
-                        <Button id="stopBTN" fx:id="stopBTN" layoutX="190.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleStopBTN" text="Stop" />
-                        <ToggleButton id="loopBTN" fx:id="loopBTN" layoutX="263.0" layoutY="215.0" mnemonicParsing="false" text="ToggleButton" />
-                        <Label id="testLabel" fx:id="testLabel" layoutX="99.0" layoutY="166.0" prefHeight="34.0" prefWidth="73.0" text="Label" />
-                  <Slider id="volumeSlider" fx:id="volumeSlider" blockIncrement="1.0" layoutX="451.0" layoutY="113.0" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" value="100.0" />
-                  <Slider fx:id="progressSlider" layoutX="99.0" layoutY="271.0" prefHeight="14.0" prefWidth="393.0" />
+                  <Pane layoutX="9.0" layoutY="14.0" prefHeight="154.0" prefWidth="412.0" style="-fx-background-color: #CCFFFF; -fx-border-radius: 20;">
+                     <children>
+                        <Label fx:id="titleLabel" layoutX="14.0" layoutY="31.0" prefHeight="43.0" prefWidth="337.0" text="Label">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                              <Button id="PlayBTN" fx:id="playpauseBTN" layoutX="14.0" layoutY="79.0" mnemonicParsing="false" onAction="#handlePlayPauseBTN" text="Play/Pause" />
+                              <Button id="stopBTN" fx:id="stopBTN" layoutX="95.0" layoutY="79.0" mnemonicParsing="false" onAction="#handleStopBTN" text="Stop" />
+                        <Button fx:id="fileBtn" layoutX="312.0" layoutY="125.0" mnemonicParsing="false" onAction="#handleFilePicker" text="File" />
+                        <Slider id="volumeSlider" fx:id="volumeSlider" blockIncrement="1.0" layoutX="366.0" layoutY="4.0" orientation="VERTICAL" prefHeight="140.0" prefWidth="40.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+                              <Label id="testLabel" fx:id="timeLabel" layoutX="270.0" layoutY="75.0" prefHeight="34.0" prefWidth="95.0" text="Label">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="isLoop" layoutX="144.0" layoutY="79.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="52.0" text="Loop" />
+                        <CheckBox fx:id="isFadeOut" layoutX="196.0" layoutY="79.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" text="Fade out" />
+                        <Label fx:id="artistLabel" layoutX="15.0" layoutY="4.0" prefHeight="43.0" prefWidth="337.0" text="Label">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Slider fx:id="progressSlider" blockIncrement="0.0" layoutX="14.0" layoutY="109.0" max="0.0" prefHeight="16.0" prefWidth="337.0" />
+                     </children>
+                  </Pane>
                     </children>
                 </Pane>
-                <Pane id="rightPane" fx:id="rightPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: EC0704;" />
+                <Pane id="rightPane" fx:id="rightPane" prefHeight="718.0" prefWidth="297.0" style="-fx-background-color: #CCCCCC;">
+               <children>
+                  <Pane layoutX="14.0" layoutY="14.0" prefHeight="154.0" prefWidth="212.0" style="-fx-background-color: #CCFFFF; -fx-border-radius: 20;">
+                     <children>
+                        <Button id="PlayBTN" fx:id="loopBtn" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#handlePlayPauseBTN" prefHeight="103.0" prefWidth="113.0" />
+                        <Slider id="volumeSlider" fx:id="loopVolumeSlider" blockIncrement="1.0" layoutX="156.0" layoutY="14.0" orientation="VERTICAL" prefHeight="96.0" prefWidth="40.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+                        <Button fx:id="loopFileBtn" layoutX="159.0" layoutY="117.0" mnemonicParsing="false" onAction="#handleFilePicker" text="File" />
+                        <Label id="testLabel" fx:id="loopLabel" layoutX="14.0" layoutY="113.0" prefHeight="34.0" prefWidth="95.0" text="Label">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children></Pane>
             </items>
         </SplitPane>
     </children>

@@ -23,7 +23,7 @@ import javafx.scene.media.MediaPlayer.Status;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
 
-public class PlayerSceneFXMLController implements Initializable {
+public class LooperSceneFXMLController implements Initializable {
 
     @FXML
     private Button playpauseBTN;

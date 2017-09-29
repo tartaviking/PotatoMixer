@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane prefHeight="154.0" prefWidth="212.0" style="-fx-background-color: #CCFFFF; -fx-border-radius: 20;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ivandrew.potatomixer.PlayerSceneFXMLController">
+   <children>
+      <Button id="PlayBTN" fx:id="loopBtn" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#handlePlayPauseBTN" prefHeight="103.0" prefWidth="113.0" />
+      <Slider id="volumeSlider" fx:id="loopVolumeSlider" blockIncrement="1.0" layoutX="156.0" layoutY="14.0" orientation="VERTICAL" prefHeight="96.0" prefWidth="40.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+      <Button fx:id="loopFileBtn" layoutX="159.0" layoutY="117.0" mnemonicParsing="false" onAction="#handleFilePicker" text="File" />
+      <Label id="testLabel" fx:id="loopLabel" layoutX="14.0" layoutY="113.0" prefHeight="34.0" prefWidth="95.0" text="Label">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
