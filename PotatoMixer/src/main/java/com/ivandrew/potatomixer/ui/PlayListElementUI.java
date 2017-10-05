@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ivandrew.potatomixer.ui;
 
 import com.ivandrew.potatomixer.media.PlayList;
@@ -33,7 +28,7 @@ public final class PlayListElementUI {
     private final ToolBar trackPanel;
     private final static String UNKNOWN = "UNKNOWN";
     private final AnchorPane bottomPanel;
-    private final static String backColor = "-fx-background-color:";
+    private final static String BACKGROUND_COLOR = "-fx-background-color:";
     private final static String SELECTED_COLOR = "-fx-background-color:#CCFFFF";
     private final static String PROGRESS_SLIDER = "#progressSlider";
     private final static String TIME_LABEL = "#timeLabel";
@@ -95,6 +90,7 @@ public final class PlayListElementUI {
             track.getMp().setVolume(slider.getValue() / 100);
         });
 
+        trackPanel.getItems().add(deleteBtn);
         trackPanel.getItems().add(name);
         trackPanel.getItems().add(duration);
 
@@ -103,8 +99,7 @@ public final class PlayListElementUI {
         trackPanel.getItems().add(isFadeOut);
         trackPanel.getItems().add(slider);
 
-        trackPanel.getItems().add(deleteBtn);
-        trackPanel.setStyle(backColor);
+        trackPanel.setStyle(BACKGROUND_COLOR);
         parent.getChildren().add(trackPanel);
     }
 
@@ -134,7 +129,7 @@ public final class PlayListElementUI {
     }
 
     public void unSelectElement() {
-        trackPanel.setStyle(backColor);
+        trackPanel.setStyle(BACKGROUND_COLOR);
     }
 
     public ToolBar getTrackPanel() {
